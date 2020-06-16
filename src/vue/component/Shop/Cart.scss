@@ -1,0 +1,150 @@
+.app-cart {
+  border-left: 1px solid grey;
+  height: 100%;
+  overflow-y: scroll;
+
+  position: relative;
+
+  &__item-wrapper {
+    margin-bottom: 0.5em;
+  }
+
+  &__list {
+    margin: 0 1.5vw;
+    overflow: hidden;
+  }
+
+  &__checkout-wrapper {
+    bottom: 0;
+    position: absolute;
+
+    width: 100%;
+
+    z-index: 1;
+  }
+
+  &__checkout-bottom-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+
+    justify-content: center;
+    padding-bottom: 2rem;
+
+    text-align: center;
+  }
+
+  &__gradient {
+    height: 3em;
+
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,0) 100%);
+  }
+
+  &__checkout-button-wrapper {
+    padding: 0.5rem 2rem;
+  }
+
+  &__checkout-button {
+    background: rgb(245,182,103);
+    background: linear-gradient(71deg, rgba(245,182,103,1) 0%, rgba(241,152,100,1) 100%);
+
+    padding: 0 3vw;
+    width: 100%;
+  }
+
+  &__checkout-total {
+    font-size: 1.6rem;
+    font-weight: bold;
+
+    padding: 0 1.5rem;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .app-cart {
+    border-left: none;
+    left: 100vw !important;
+
+    min-width: 290px !important;
+
+    position: fixed !important;
+
+    transition: left 0.25s;
+
+    width: 100%;
+    max-width: 100%;
+
+    z-index: 1;
+
+    &--open {
+      left: 0 !important;
+    }
+
+    &__wrapper {
+      height: 100%;
+      position: relative;
+
+      padding-bottom: 9rem !important;
+    }
+
+    &__header {
+      width: 100%;
+      margin-bottom: 0 !important;
+    }
+
+    &__list {
+      padding-top: 1.25rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .app-cart {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    &__checkout-button {
+      padding: 0 1vw;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 761px){
+  .app-cart {
+    &__checkout-button {
+      padding: 0 3vw;
+      font-size: 1rem;
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1201px){
+  .app-cart {
+    padding-bottom: 7rem !important;
+
+    &__checkout-bottom-wrapper {
+      align-items: center;
+      display: flex;
+      flex-direction: unset;
+      padding-bottom: 2.5rem;
+
+      text-align: unset;
+    }
+
+    &__checkout-button-wrapper {
+      width: unset;
+      padding: unset;
+    }
+
+    &__checkout-button {
+      width: unset;
+    }
+
+    &__checkout-total {
+      width: unset;
+    }
+  }
+}
